@@ -21,9 +21,32 @@ int main(int argc, char** argv) {
 	SDL_bool gameIsRunning = SDL_TRUE;
 	SDL_Event event;
 
-	Timer* timer = Timer_new(1000 / FPS);
+	Timer* renderTimer = Timer_new(1000 / FPS);
+	Timer* updateTimer = Timer_new(1000 / FPS);
+
+
+	Timer_start(renderTimer);
+	Timer_start(updateTimer);
 	while (gameIsRunning) {
 		// update here
+		if (Timer_endTime(updateTimer)) {
+			Timer_reset(updateTimer);
+			// update here
+		}
+
+		// render
+		if (Timer_isEnd(renderTimer)) {
+			Timer_reset(renderTimer);
+
+			// render here
+			RenderingContext_clearScreen(app);
+
+			RenderingContext_renderSprite(app, board->_boardSprite);
+			
+			RenderingContext_display(app);
+		}
+
+		// handling user input
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
 			case SDL_QUIT:
@@ -31,19 +54,6 @@ int main(int argc, char** argv) {
 			default:
 				break;
 			}
-		}
-
-		if (Timer_isEnd(timer)) {
-			SDL_LogCritical(0, "%d", SDL_GetTicks64());
-			Timer_reset(timer);
-
-
-			RenderingContext_clearScreen(app);
-
-			// render here
-			RenderingContext_renderSprite(app, board->_boardSprite);
-			
-			RenderingContext_display(app);
 		}
 	}
 
