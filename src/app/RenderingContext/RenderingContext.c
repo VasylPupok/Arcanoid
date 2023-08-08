@@ -29,7 +29,7 @@ void RenderingContext_delete(RenderingContext* target) {
 }
 
 void RenderingContext_renderSprite(RenderingContext* target, Sprite* sprite) {
-	int err = SDL_RenderCopy(
+	int err = SDL_RenderCopyF(
 		target->_renderer,
 		sprite->_texture,
 		&sprite->_textureFrame,

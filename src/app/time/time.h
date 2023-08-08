@@ -1,5 +1,7 @@
 #pragma once
 
+#define Time_SECOND 1000
+
 typedef struct {
 	size_t _time;
 	size_t _startTime;

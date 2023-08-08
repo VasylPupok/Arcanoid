@@ -1,4 +1,4 @@
-#include "Timer.h"
+#include "time.h"
 #include <SDL.h>
 
 Timer* Timer_new(size_t time) {

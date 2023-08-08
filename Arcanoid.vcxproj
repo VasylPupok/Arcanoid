@@ -64,7 +64,6 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="default_sdl.props" />
-    <Import Project="SDL_project_config.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -73,7 +72,6 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="default_sdl.props" />
-    <Import Project="SDL_project_config.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,18 +132,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\app\RenderingContext\RenderingContext.c" />
-    <ClCompile Include="src\app\Timer\Timer.c" />
+    <ClCompile Include="src\app\time\Timer.c" />
     <ClCompile Include="src\graphics\sprite\sprite.c" />
     <ClCompile Include="src\graphics\texture\texture.c" />
     <ClCompile Include="src\main.c" />
-    <ClCompile Include="src\models\game_entities\board.c" />
+    <ClCompile Include="src\models\game_entities\Board\board.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\app\RenderingContext\RenderingContext.h" />
     <ClInclude Include="src\graphics\sprite\sprite.h" />
     <ClInclude Include="src\graphics\texture\texture.h" />
-    <ClInclude Include="src\models\game_entities\board.h" />
-    <ClInclude Include="src\app\Timer\Timer.h" />
+    <ClInclude Include="src\models\game_entities\Board\board.h" />
+    <ClInclude Include="src\app\time\time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

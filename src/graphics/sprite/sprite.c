@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite* Sprite_new(const SDL_Rect* spriteFrame, SDL_Texture* tex) {
+Sprite* Sprite_new(const SDL_FRect* spriteFrame, SDL_Texture* tex) {
     int width;
     int height;
     int querry_err = SDL_QueryTexture(tex, NULL, NULL, &width, &height);
@@ -16,7 +16,7 @@ Sprite* Sprite_new(const SDL_Rect* spriteFrame, SDL_Texture* tex) {
     return sprite;
 }
 
-SDL_bool Sprite_containsPoint(const Sprite* sprite, int x, int y) {
+SDL_bool Sprite_containsPoint(const Sprite* sprite, float x, float y) {
     return 
         sprite->_spriteFrame.x < x && x < sprite->_spriteFrame.x + sprite->_spriteFrame.w &&
         sprite->_spriteFrame.y < y && y < sprite->_spriteFrame.y + sprite->_spriteFrame.h;

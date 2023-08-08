@@ -14,12 +14,12 @@ void Board_delete(Board* target) {
 	free(target);
 }
 
-void Board_move(Board* target, int delta_x, int delta_y) {
+void Board_move(Board* target, float delta_x, float delta_y) {
 	target->_boardSprite->_spriteFrame.x += delta_x;
 	target->_boardSprite->_spriteFrame.y += delta_y;
 }
 
-void Board_move_to(Board* target, int x, int y) {
+void Board_move_to(Board* target, float x, float y) {
 	target->_boardSprite->_spriteFrame.x = x;
 	target->_boardSprite->_spriteFrame.y = y;
 }

@@ -3,15 +3,15 @@
 #include <SDL_image.h>
 
 typedef struct {
-	SDL_Rect _spriteFrame;
+	SDL_FRect _spriteFrame;
 	SDL_Rect _textureFrame;
 	SDL_Texture* _texture;
 } Sprite;
 
-Sprite* Sprite_new(const SDL_Rect* spriteFrame, SDL_Texture* tex);
+Sprite* Sprite_new(const SDL_FRect* spriteFrame, SDL_Texture* tex);
 
 inline void Sprite_delete(Sprite* target) {
 	free(target);
 }
 
-SDL_bool Sprite_containsPoint(const Sprite* sprite, int x, int y);
+SDL_bool Sprite_containsPoint(const Sprite* sprite, float x, float y);
