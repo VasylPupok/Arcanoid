@@ -8,7 +8,7 @@
 
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 800
-#define FPS 60
+#define FPS 144
 
 int main(int argc, char** argv) {
 	SDL_InitSubSystem(SDL_INIT_VIDEO);

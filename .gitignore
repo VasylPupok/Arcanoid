@@ -36,3 +36,11 @@
 
 #Build folder
 /x64/
+.vs/
+
+#VS project files
+*.vcxproj.filters
+*.vcxproj.user
+
+
+
